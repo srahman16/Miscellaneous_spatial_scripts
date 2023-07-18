@@ -34,4 +34,4 @@ with open(output_file, "w") as f:
     for file, _ in sorted_files:
         f.write(file + "\n")
 
-print("Files are sort and the generated text document is here", output_file)
+print("Files are sorted and the generated text document is here", output_file)
