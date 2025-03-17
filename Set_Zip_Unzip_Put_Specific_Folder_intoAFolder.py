@@ -39,20 +39,21 @@ def unzip_files(directory, output_dir):
                 print(f"Extracted: {filename} to {extract_to}")
 
 def move_safe_folders(extracted_dir, safe_output_dir):
-    for root, dirs, files in os.walk(extracted_dir):
+    for root, dirs, files in os.walk(extracted_dir): 
         for folder in dirs:
-            if folder.endswith(".SAFE"):
-                safe_folder_path = os.path.join(root, folder)
+            if folder.endswith(".SAFE"): 
+                safe_folder_path = os.path.join(root, folder)  
+
+                # Define new location in the safe folder directory
                 new_location = os.path.join(safe_output_dir, folder)
 
+                # Move only if it doesn't already exist in the destination
                 if not os.path.exists(new_location):
                     shutil.move(safe_folder_path, new_location)
                     print(f"Moved: {safe_folder_path} ➝ {new_location}")
                 else:
                     print(f"Skipped (Already Exists): {folder}")
-
         break
-
 
 rename_files_to_zip(source_folder)
 unzip_files(source_folder, extract_folder)
