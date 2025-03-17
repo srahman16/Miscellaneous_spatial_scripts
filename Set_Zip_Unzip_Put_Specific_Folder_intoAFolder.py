@@ -43,11 +43,7 @@ def move_safe_folders(extracted_dir, safe_output_dir):
         for folder in dirs:
             if folder.endswith(".SAFE"): 
                 safe_folder_path = os.path.join(root, folder)  
-
-                # Define new location in the safe folder directory
                 new_location = os.path.join(safe_output_dir, folder)
-
-                # Move only if it doesn't already exist in the destination
                 if not os.path.exists(new_location):
                     shutil.move(safe_folder_path, new_location)
                     print(f"Moved: {safe_folder_path} ➝ {new_location}")
