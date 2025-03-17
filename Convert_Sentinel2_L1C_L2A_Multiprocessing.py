@@ -34,3 +34,6 @@ if __name__ == '__main__':
     for res in results:
         print(res)
     print("All images processed successfully!")
+
+
+## 100%|██████████| 104/104 [1:29:17<00:00, 51.51s/it]# Progress Bar
